@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cuestionario - Lengua Castellana 2º Bachillerato</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<div class="navbar">
+    <a href="#">Inicio</a>
+    <a href="#">Acerca de</a>
+    <a href="#">Contacto</a>
+</div>
+
+<h1 class="page-title">Lengua Castellana 2º Bachillerato</h1>
+
+<div id="quiz-container">
+    <div id="question" class="question"></div>
+    <div id="options"></div>
+    <button onclick="nextQuestion()">Siguiente</button>
+    <div id="result"></div>
+</div>
+
+<script>
+const questions = [
+    {
+        question: "¿Quién escribió 'La Casa de los Espíritus'?",
+        options: ["Gabriel García Márquez", "Isabel Allende", "Mario Vargas Llosa", "Julio Cortázar"],
+        answer: "Isabel Allende"
+    },
+    {
+        question: "¿Cuál de los siguientes es un género literario caracterizado por la narración de sucesos imaginarios?",
+        options: ["Novela", "Ensayo", "Poesía", "Biografía"],
+        answer: "Novela"
+    },
+    {
+        question: "¿Quién es el autor de 'Rayuela'?",
+        options: ["Gabriel García Márquez", "Mario Vargas Llosa", "Julio Cortázar", "Jorge Luis Borges"],
+        answer: "Julio Cortázar"
+    },
+    {
+        question: "¿En qué movimiento literario se encuadra 'Cien años de soledad'?",
+        options: ["Modernismo", "Realismo Mágico", "Generación del 98", "Vanguardismo"],
+        answer: "Realismo Mágico"
+    },
+    {
+        question: "¿Qué autor escribió 'Don Quijote de la Mancha'?",
+        options: ["Miguel de Cervantes", "Federico García Lorca", "Jorge Luis Borges", "Pablo Neruda"],
+        answer: "Miguel de Cervantes"
+    },
+    {
+        question: "¿Cuál de estas obras pertenece al género teatral?",
+        options: ["Crónica de una muerte anunciada", "La casa de Bernarda Alba", "Cien años de soledad", "La ciudad y los perros"],
+        answer: "La casa de Bernarda Alba"
+    }
+];
+
+let currentQuestionIndex = 0;
+
+function nextQuestion() {
+    if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        displayQuestion();
+    } else {
+        showResult();
+    }
+}
+
+function displayQuestion() {
+    const currentQuestion = questions[currentQuestionIndex];
+    const questionElement = document.getElementById("question");
+    const optionsElement = document.getElementById("options");
+    
+    questionElement.textContent = currentQuestion.question;
+    optionsElement.innerHTML = "";
+
+    currentQuestion.options.forEach((option, index) => {
+        const button = document.createElement("button");
+        button.textContent = option;
+        button.onclick = () => checkAnswer(option);
+        optionsElement.appendChild(button);
+    });
+}
+
+function checkAnswer(selectedOption) {
+    const currentQuestion = questions[currentQuestionIndex];
+    const resultElement = document.getElementById("result");
+
+    if (selectedOption === currentQuestion.answer) {
+        resultElement.textContent = "¡Respuesta correcta!";
+    } else {
+        resultElement.textContent = "Respuesta incorrecta. La respuesta es: " + currentQuestion.answer;
+    }
+}
+
+function showResult() {
+    const quizContainer = document.getElementById("quiz-container");
+}
+
+displayQuestion();
+</script>
+
+</body>
+</html>
