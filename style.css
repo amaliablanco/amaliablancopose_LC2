@@ -1,0 +1,81 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@300;400;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f9f5f5;
+    margin: 0 auto; 
+    max-width: 800px; 
+    padding: 20px;
+}
+
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center; 
+    margin-top: 30px; 
+    color: #e91e63; 
+}
+
+h2 {
+    font-size: 1.5rem; 
+    font-weight: 700; 
+    color: #3f51b5;
+    text-align: center; 
+    margin-top: 20px; 
+}
+
+
+p {
+    font-size: 1.1rem; 
+    margin: 15px 0;
+    line-height: 1.8em;
+    color: #333;
+}
+
+
+.navbar {
+    background-color: #3f51b5;
+    padding: 10px 0; 
+    text-align: center; 
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none; 
+    margin: 0 15px; 
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.navbar a:hover {
+    color: #ff4081;
+}
+
+ul {
+    list-style-type: disc; 
+    margin-left: 20px; 
+}
+
+ul li {
+    margin-bottom: 5px; 
+}
+
+p a {
+    color: #e91e63; 
+    font-weight: bold; 
+    text-decoration: underline; 
+    transition: color 0.3s;
+}
+
+p a:hover {
+    color: #ff4081; 
+}
